@@ -68,11 +68,11 @@
 	}else{
 		$brg=mysqli_query($konek, "select * from barang limit $start, $per_hal");
 	}
-	$id=101;
+	//$id=0;
 	while($b=mysqli_fetch_array($brg)){
 		?>
 		<tr>
-			<td><?php echo $id++ ?></td>
+			<td><?php echo $b['id_barang'] ?></td>
 			<td><?php echo $b['nama'] ?></td>
 			<td>Rp.<?php echo number_format($b['harga_1']) ?>,-</td>
 			<td>Rp.<?php echo number_format($b['harga_2']) ?>,-</td>

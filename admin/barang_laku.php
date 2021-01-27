@@ -39,7 +39,9 @@ if(isset($_GET['tanggal'])){
         <th>No</th>
         <th>Tanggal</th>
         <th>Nama Barang</th>
-        <th>Harga Terjual /pc</th>
+        <th>Harga 1 Terjual /pc</th>
+        <th>Harga 2 Terjual /pc</th>
+        <th>Harga 3 Terjual /pc</th>
         <th>Total Harga</th>
         <th>Jumlah</th>
         <th>Laba</th>
@@ -60,7 +62,9 @@ if(isset($_GET['tanggal'])){
             <td><?php echo $no++ ?></td>
             <td><?php echo $b['tanggal'] ?></td>
             <td><?php echo $b['nama'] ?></td>
-            <td>Rp.<?php echo number_format($b['harga']) ?>,-</td>
+            <td>Rp.<?php echo number_format($b['harga_1']) ?>,-</td>
+            <td>Rp.<?php echo number_format($b['harga_2']) ?>,-</td>
+            <td>Rp.<?php echo number_format($b['harga_3']) ?>,-</td>
             <td>Rp.<?php echo number_format($b['total_harga']) ?>,-</td>
             <td><?php echo $b['jumlah'] ?></td>
             <td><?php echo "Rp.".number_format($b['laba']).",-" ?></td>
@@ -120,7 +124,7 @@ if(isset($_GET['tanggal'])){
                         <select class="form-control" name="nama">
                             <?php
                             $brg=mysqli_query($konek, "select * from barang");
-                            while($b=mysqli_fetch_array($konek, $brg)){
+                            while($b=mysqli_fetch_array($brg)){
                                 ?>
                                 <option value="<?php echo $b['nama']; ?>"><?php echo $b['nama'] ?></option>
                                 <?php

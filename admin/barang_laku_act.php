@@ -3,7 +3,9 @@
 include 'config.php';
 $tgl=$_POST['tgl'];
 $nama=$_POST['nama'];
-$harga=$_POST['harga'];
+$harga1=$_POST['harga_1'];
+$harga2=$_POST['harga_2'];
+$harga3=$_POST['harga_3'];
 $jumlah=$_POST['jumlah'];
 
 $dt=mysqli_query($konek, "select * from barang where nama='$nama'");

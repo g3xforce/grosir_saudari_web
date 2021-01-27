@@ -1,5 +1,6 @@
 <?php
     include 'config.php';
+    $id=$_POST['id_barang'];
     $nama=$_POST['nama'];
     $jenis=$_POST['jenis'];
     $modal=$_POST['modal'];
@@ -10,6 +11,6 @@
     $sisa=$_POST['sisa'];
 
 
-    mysqli_query($konek, "insert into barang values('', '$nama', '$jenis', '$modal', 'harga_1', 'harga_2', 'harga_3', 'jumlah', 'sisa')");
+    mysqli_query($konek, "insert into barang values('$id', '$nama', '$jenis', '$modal', '$harga1', '$harga2', '$harga3', '$jumlah', '$sisa')");
     header("location:barang.php");
 ?>
