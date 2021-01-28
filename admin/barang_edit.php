@@ -2,15 +2,16 @@
 include 'header.php';
 ?>
 <h3><span class="glyphicon glyphicon-briefcase"></span> Edit Barang</h3>
-<a class="btn" href="barang.php"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
+<a class="btn" href="barang_main_menu.php"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
 <?php
     $id_brg=mysqli_real_escape_string($konek, $_GET['id']);
     $det=mysqli_query($konek, "select * from barang where id_barang='$id_brg'")or die(mysqli_error($konek));
     while($d=mysqli_fetch_array($det)){
 ?>
-    <form action="update.php" method="post">
+    <form action="api_barang.php" method="post">
         <table class="table"></table>
             <tr>
+                <input type="text" name="aksi" value="edit_barang">
                 <td></td>
                 <td><input type="hidden" name="id_barang" value="<?php echo $d['id_barang'] ?>"></td>
             </tr>

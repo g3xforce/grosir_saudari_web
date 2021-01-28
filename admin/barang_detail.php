@@ -1,9 +1,9 @@
 <?php
-include 'header.php';
+    include 'header.php';
 ?>
 
 <h3><span class="glyphicon glyphicon-briefcase"></span> Detail Barang</h3>
-<a class="btn" href="barang.php"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
+<a class="btn" href="barang_main_menu.php"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
 
 <?php
 $brg=mysqli_real_escape_string($konek, $_GET['id']);
@@ -45,6 +45,6 @@ while($d=mysqli_fetch_array($det)){
             <td><?php echo $d['sisa'] ?></td>
         </tr>
     </table>
-    <?php
+<?php
 }
 ?>

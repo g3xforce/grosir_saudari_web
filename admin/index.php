@@ -1,9 +1,9 @@
 <?php 
-include 'header.php';
+	include 'header.php';
 ?>
 
 <?php 
-$a = mysqli_query($konek, "select * from barang");
+	$a = mysqli_query($konek, "select * from barang");
 ?>
 
 <div class="col-md-10">
